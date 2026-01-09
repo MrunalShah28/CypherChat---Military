@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* We removed the @apply rule that was causing the error.
+   We will set the background directly on the body here.
+*/
+
+body {
+  background-color: #050a05; /* Deep Military Green/Black */
+  color: #4ade80; /* Terminal Green */
+  font-family: 'Courier Prime', monospace; /* Tactical Font */
+  overflow: hidden;
+}
+
+/* CRT Scanline Effect Overlay */
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 9999;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+/* Custom Scrollbar for HUD */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0a140a;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1a331a;
+  border-radius: 0px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}
